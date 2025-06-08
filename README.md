@@ -1,10 +1,11 @@
-# Krida: AI-Powered Foodie Tour Generator
+# Krida: AI-Powered Foodie Tour Generator v1.0.2
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)
 ![Open Source Love](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)
 ![Built with Julep AI](https://img.shields.io/badge/Built%20with-Julep%20AI-purple.svg)
 ![Foodie](https://img.shields.io/badge/Foodie-%F0%9F%8D%9E%20%F0%9F%8D%95%20%F0%9F%8D%94-orange.svg)
+![Interactive](https://img.shields.io/badge/Interactive-Menu-brightgreen.svg)
 
 <p align="center">
   <!-- Logo Start -->
@@ -20,36 +21,78 @@
 
 > *"Krida"* (Sanskrit: क्रीडा) means "play" or "sport" – because exploring food should be a delightful adventure!
 
-Krida is an **open-source** Python-based AI workflow that generates a personalized, one-day "foodie tour" for any city or set of cities. It intelligently combines real-time weather data with the creative power of Julep AI to craft engaging, practical, and narrative-driven culinary itineraries.
+Krida is an **open-source** Python-based AI workflow that generates personalized, one-day "foodie tours" for any city. The interactive v1.0.2 update removes hardcoded cities and introduces a beautiful menu system where users can select their own destinations and budget preferences. It intelligently combines real-time weather data with the creative power of Julep AI to craft engaging, practical, and narrative-driven culinary itineraries.
+
+---
+
+## 🎉 What's New in v1.0.2
+
+**🎨 Enhanced User Experience:**
+- Beautiful ASCII art welcome screen with improved branding
+- Contextual city suggestions (Popular choices, Food capitals, Hidden gems)
+- Enhanced input validation with helpful error messages
+- Progress tracking with spinners and status indicators
+
+**🧠 Smart Budget Processing:**
+- Natural language support: "cheap", "expensive", "moderate", "luxury"
+- Flexible input: accepts numbers, keywords, or descriptive phrases
+- Intelligent mapping to appropriate budget categories
+- Custom amount support with currency symbol handling
+
+**💬 Better User Interaction:**
+- Enhanced confirmation screen with detailed tour summary
+- Multiple navigation options (Continue, Modify, Quit)
+- Improved error handling with recovery suggestions
+- Keyboard interrupt handling for graceful exits
+
+**🚀 Performance & Reliability:**
+- Better API error handling and user feedback
+- Enhanced service initialization with status updates
+- Improved city name formatting and validation
+- More robust tour generation with fallback options
 
 ---
 
 ## ✨ Features
 
-- **🎨 Beautiful Terminal UI**: Rich formatting with colorful panels, emojis, and markdown rendering
-- **🌤️ Weather-Smart Planning**: Suggests indoor or outdoor dining based on live weather
-- **🍛 Authentic Cuisine Focus**: Discovers genuine local dishes, not generic options
-- **⭐ Curated Restaurant Selection**: Finds top-rated, authentic establishments for each dish
-- **📖 Narrative-Driven Tours**: Crafts engaging, blog-style stories for your day
-- **🏙️ Multi-City Support**: Plan tours across multiple destinations in one go
-- **🛠️ Modular & Extensible**: Easy to add new features, APIs, or cities
+- **📱 Enhanced Interactive Menu System**: Beautiful ASCII art, helpful tips, and intuitive navigation
+- **🌍 Smart City Selection**: Choose any cities worldwide with input validation, formatting, and contextual suggestions  
+- **💰 Advanced Budget Options**: Select from tiers OR use natural language like "cheap", "expensive", "moderate"
+- **🎨 Beautiful Terminal UI**: Rich formatting with colorful panels, progress tracking, and markdown rendering
+- **🌤️ Weather-Smart Planning**: Suggests indoor or outdoor dining based on live weather conditions
+- **🍛 Authentic Cuisine Focus**: Discovers genuine local dishes, not generic tourist options
+- **⭐ Budget-Conscious Restaurants**: Finds top-rated establishments that match your exact budget
+- **📖 Narrative-Driven Tours**: Crafts engaging, blog-style stories for your culinary journey
+- **🏙️ Multi-City Support**: Plan tours across multiple destinations with progress tracking
+- **🛠️ Modular & Extensible**: Easy to add new features, APIs, or customize for different regions
 
 ---
 
 ## 🚀 Workflow Logic
 
-For each city, Krida executes the following sequence:
+Krida v1.0.2 features an interactive workflow that starts with user input:
 
+**Interactive Setup:**
+1. **📱 Welcome & Enhanced Menu**  
+   Beautiful interactive interface with ASCII art, helpful tips, and user-friendly city selection with suggestions.
+2. **🌍 Smart City Selection**  
+   Choose any cities worldwide with input validation, formatting, and helpful examples.
+3. **💰 Advanced Budget Configuration**  
+   Select from budget tiers OR use natural language like "cheap", "expensive", "moderate", or enter custom dollar amounts.
+4. **✅ Interactive Confirmation**  
+   Review your selections with beautiful formatting and multiple options to proceed, modify, or quit.
+
+**For each selected city, Krida executes:**
 1. **🌤️ Weather Check**  
    Fetches current weather conditions using the OpenWeather API.
 2. **🏠 Dining Suggestion**  
    Suggests indoor or outdoor dining based on temperature and weather (e.g., rain).
-3. **🍽️ Dish Discovery**  
-   Uses Julep AI (`gpt-4o` model) to identify three iconic local dishes.
-4. **🔍 Restaurant Search**  
-   For each dish, queries Julep AI to find a single, top-rated, authentic restaurant famous for that dish.
-5. **📝 Narrative Generation**  
-   All collected data (weather, dining style, dishes, restaurants) is passed to Julep AI, which generates a creative, blog-style tour guide narrative for a full day (Breakfast, Lunch, Dinner).
+3. **🍽️ Budget-Aware Dish Discovery**  
+   Uses Julep AI (`gpt-4o` model) to identify three iconic local dishes that fit your budget.
+4. **🔍 Smart Restaurant Search**  
+   For each dish, queries Julep AI to find budget-appropriate, top-rated, authentic restaurants.
+5. **📝 Enhanced Narrative Generation**  
+   All collected data (weather, budget, dining style, dishes, restaurants) is passed to Julep AI, which generates a creative, blog-style tour guide narrative with budget considerations.
 
 ---
 
@@ -146,11 +189,13 @@ Krida features a stunning terminal interface with colorful panels, emojis, and m
 
 ### ✨ What You'll See:
 
+- **📱 Interactive Setup**: User-friendly menus for city and budget selection
 - **🎨 Rich Terminal UI**: Colorful panels and progress indicators
-- **🌍 Multi-City Planning**: Tours for Delhi, Paris, Tokyo, and New York
+- **🌍 Custom City Planning**: Tours for any cities you choose worldwide
+- **💰 Budget-Aware Recommendations**: Restaurants and dishes that match your budget
 - **🌤️ Weather Integration**: Real-time weather affects dining suggestions
-- **🍽️ Authentic Cuisine**: Local dishes like Croissants, Coq au Vin, Ratatouille for Paris
-- **📖 Beautiful Narratives**: Markdown-formatted stories for each city
+- **🍽️ Authentic Cuisine**: Local dishes appropriate for your budget level
+- **📖 Beautiful Narratives**: Markdown-formatted stories with budget considerations
 
 <details>
 <summary>📜 Click to expand sample Paris narrative text</summary>
