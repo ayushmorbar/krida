@@ -1,17 +1,9 @@
-# krida/services/julep_service.py
-
-import os
 import json
 import re
 from typing import Optional, List, Dict
 from julep import Julep
 
 class JulepService:
-    """
-    A service to interact with the Julep AI API for culinary tasks.
-    This service standardizes on JSON for data extraction and provides
-    a method for creative narrative generation.
-    """
     def __init__(self, api_key: str):
         self.client = Julep(api_key=api_key)
         self.agent_id = self._create_culinary_agent()
@@ -76,10 +68,7 @@ class JulepService:
             return None
             
     def generate_tour_narrative(self, city: str, weather: str, dining_suggestion: str, tour_data: Dict) -> Optional[str]:
-        """
-        Generates a creative, blog-style foodie tour narrative.
-        """
-        # We will format the tour_data into a string for the prompt
+        # Format the tour_data into a string for the prompt
         prompt_context = f"City: {city}\n"
         prompt_context += f"Current Weather: {weather}\n"
         prompt_context += f"Dining Suggestion: {dining_suggestion}\n\n"

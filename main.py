@@ -1,5 +1,3 @@
-# main.py
-
 import os
 from services.weather import WeatherService
 from services.julep_service import JulepService
@@ -11,9 +9,6 @@ from rich.text import Text
 console = Console()
 
 def run_tour_for_city(city: str, weather_service: WeatherService, julep_service: JulepService):
-    """
-    Runs the entire foodie tour generation workflow for a single city.
-    """
     # City header
     city_title = Text(f"Generating Foodie Tour for {city.upper()}", style="bold magenta")
     console.print(Panel(city_title, border_style="bright_blue", padding=(0, 2)))
@@ -80,9 +75,6 @@ def run_tour_for_city(city: str, weather_service: WeatherService, julep_service:
 
 
 def main():
-    """
-    Main function to run the Krida AI workflow.
-    """
     # Welcome header
     welcome_text = Text("🍽️ Krida AI Foodie Tour Generator 🤖", style="bold bright_magenta")
     console.print(Panel(welcome_text, border_style="bright_cyan", padding=(1, 4)))

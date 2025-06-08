@@ -61,11 +61,16 @@ krida/
 ├── README.md
 ├── main.py
 ├── requirements.txt
+├── .gitignore
+├── .env.example
+├── assets/
+│   └── images/
+│       ├── krida_logo.png
+│       ├── sample_output_0.png
+│       └── sample_output_1.png
 └── services/
-    ├── inspect_julep.py
-    ├── julep_service.py
-    ├── weather.py
-    └── __pycache__/
+   ├── julep_service.py
+   └── weather.py
 ```
 
 ---
@@ -134,10 +139,10 @@ krida/
 Krida features a stunning terminal interface with colorful panels, emojis, and markdown-rendered narratives:
 
 **Application Startup & City Planning**
-![Krida Startup](assets/images/sample_ouput_0.png)
+![Krida Startup](assets/images/sample_output_0.png)
 
 **City Tour Generation & Narrative Output**
-![Paris Tour Example](assets/images/sample_ouput_1.png)
+![Paris Tour Example](assets/images/sample_output_1.png)
 
 ### ✨ What You'll See:
 

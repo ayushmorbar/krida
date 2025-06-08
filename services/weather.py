@@ -1,13 +1,10 @@
-# krida/services/weather.py
-
 import os
 import requests
 from typing import Optional, Dict
 
 class WeatherService:
-    """
-    A service to interact with the OpenWeather API to get weather data.
-    """
+    """A service to interact with the OpenWeather API to get weather data."""
+    
     def __init__(self, api_key: str):
         """
         Initializes the WeatherService with an API key.
@@ -31,7 +28,7 @@ class WeatherService:
         params = {
             'q': city,
             'appid': self.api_key,
-            'units': 'metric'  # Use metric for Celsius, can be changed to 'imperial' for Fahrenheit
+            'units': 'metric'  # Change to 'imperial' for Fahrenheit
         }
         try:
             # Set a timeout to prevent the request from hanging indefinitely
@@ -43,11 +40,7 @@ class WeatherService:
             print(f"Error fetching weather data for {city}: {e}")
             return None
 
-# --- Example Usage for Testing ---
-# This block will only run when you execute this script directly
 if __name__ == '__main__':
-    # It is a best practice to load secrets like API keys from environment variables
-    # and not hardcode them in the source code.
     api_key = os.getenv('OPENWEATHER_API_KEY')
     
     if not api_key:
@@ -59,8 +52,6 @@ if __name__ == '__main__':
         weather_data = weather_service.get_weather(city_name)
         
         if weather_data:
-            # The OpenWeather API returns a JSON object with a lot of data[4]
-            # We can parse the relevant fields.
             temp = weather_data['main']['temp']
             condition = weather_data['weather'][0]['main']
             description = weather_data['weather'][0]['description']
